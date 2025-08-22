@@ -2,9 +2,11 @@ import express from "express";
 import { Rendertron } from "rendertron";
 
 const app = express();
-const PORT = process.env.PORT;
 
-// health
+// Bind ONLY to the port Render provides
+const PORT = process.env.PORT; // no fallback
+
+// Health
 app.get("/", (_req, res) => res.status(200).send(`OK prerender proxy on ${PORT}`));
 
 // /render/<absolute-url>
@@ -23,7 +25,8 @@ app.get("/render/*", async (req, res) => {
   }
 });
 
-// single-start guard
+// *** Single-start guard ***
+// If something causes this file to be evaluated twice, we still bind only once.
 if (!globalThis.__PRERENDER_LISTENING__) {
   app.listen(PORT, () => console.log(`✅ PRERENDER proxy listening on ${PORT}`));
   globalThis.__PRERENDER_LISTENING__ = true;
