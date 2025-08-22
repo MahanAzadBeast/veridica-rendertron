@@ -1,0 +1,15 @@
+{
+  "name": "veridica-rendertron",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Minimal Rendertron service for prerendering Veridica AI",
+  "scripts": {
+    "start": "rendertron --port $PORT --timeout 15000"
+  },
+  "dependencies": {
+    "rendertron": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
