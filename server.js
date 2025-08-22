@@ -2,7 +2,6 @@ import express from "express";
 import { Rendertron } from "rendertron";
 
 const app = express();
-const PORT = process.env.PORT || 10000;
 
 // health check
 app.get("/", (_req, res) => res.send(`OK prerender proxy on ${PORT}`));
