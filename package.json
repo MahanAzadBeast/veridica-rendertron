@@ -1,14 +1,13 @@
 {
   "name": "veridica-rendertron-proxy",
-  "start": "node server.js",
-  "private": true,
   "version": "1.0.0",
+  "main": "server.js",
   "type": "module",
-  "scripts": { "start": "node server.js" },
-  "dependencies": {
-    "express": "^4.19.2",
-    "rendertron": "3.1.0"
+  "scripts": {
+    "start": "node server.js"
   },
-  "engines": { "node": ">=18" }
+  "dependencies": {
+    "express": "^4.18.2",
+    "rendertron": "^3.1.0"
+  }
 }
-
