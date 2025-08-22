@@ -1,5 +1,6 @@
 {
   "name": "veridica-rendertron-proxy",
+  "start": "node server.js",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -10,3 +11,4 @@
   },
   "engines": { "node": ">=18" }
 }
+
